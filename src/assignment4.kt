@@ -1,54 +1,81 @@
-import java.util.*
+import javax.management.MBeanRegistration
 
 fun main() {
-    town("jackline","Nandi","Akirachix","lisalab")
-    numbers()
-    var name= car("v8","prado","master")
+    var gari=Car("volvo","KCB500",0,"legacy")
+    gari.start()
+    println(gari.speed)
+    println(gari.make)
+    println(gari.speed)
+    var name=Car("subaru","KCV400r",0,"ford")
+    println(name.start())
+    println(name.model)
+    name.accelerate(accelerate = 50)
+    println(name.speed)
+    gari.Carname()
+    var bic=bic()
+    bic.write("this is lovelace")
+
     println(name)
-    place()
-
-
-
-
-
-}
-fun town(name:String,country:String,School:String,classes:String){
-    var string= arrayOf(name,School,country,classes)
-    println(Arrays.toString(string))
-
-
-}
-
-fun place() { var cities= arrayOf("harare","mumbai","dodoma","jakarta")
-    println(cities[0].capitalize()+","+ cities[1].capitalize()+","+cities[2].capitalize()+","+cities[3])
-
 
 
 
 }
+ class Car(var make:String,var registration:String,var speed:Int,var model:String) {
+    fun start(){
+        println("I am starting...brooooom")
 
-fun numbers() {
-    var numbers=arrayOf(32,17,4,213,78,43,90,31,3,73,11,158,62)
-    var total= numbers.component2()+numbers.component5()
-    println(total)
-    var index=numbers.indexOf(158)
-    println(index)
-    var int=(numbers.sortedArray())
-    for(element in int){
-        println(element)
+    }
+    fun accelerate(accelerate:Int):Int{
+        speed= speed+accelerate
+        return speed
+
+
+
+
+    }
+    fun Carname(){
+        println("$model")
+        println("$make")
+
+    }
+
+
+
+}
+class bic(){
+    fun write(writing:String){
+        println(writing)
+    
+
+
+
+    }
+
+
+
     }
 
 
 
 
 
-}
 
-fun car(name:String,model:String,make:String):String {
-    var string= arrayOf(name,model,make)
-    return(Arrays.toString(string))
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
